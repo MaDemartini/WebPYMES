@@ -1,71 +1,356 @@
-/* General */
+/* Fondo general */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: #f4f4f9;
-    text-align: center;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    background-color: #cedced; 
+    color: #333; 
 }
 
-/* Header */
-header {
-    background: #007BFF;
-    color: #fff;
-    padding: 20px 10px;
+/* Hero Section */
+.hero {
+    background-image: url('images/azul.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    color: white;
+    padding: 50px 20px;
 }
 
-/* Títulos y párrafos */
-h1 {
-    margin: 0;
-    font-size: 2rem;
+.hero h1 {
+    font-size: 2.5rem;
 }
 
-p {
-    margin: 10px 0;
+.hero p {
     font-size: 1.2rem;
 }
 
-/* Contenido principal */
-main {
-    flex: 1;
-    margin: 20px auto;
-    padding: 10px;
-    max-width: 600px;
+/* Sección de características */
+.features-section {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    display: flex; /* Habilitar flexbox */
+    flex-direction: column; /* Asegura que los elementos se alineen en columna */
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    height: 100vh; /* Altura completa de la ventana */
+    margin: 0; /* Asegura que no haya márgenes adicionales */
 }
 
-/* Botón */
-button {
-    background: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
+.features-title {
+    font-size: 2.5rem; /* Ajusta el tamaño de la fuente */
+    color: #063f7c;
+    font-weight: bold;
+    text-align: center; /* Asegura que el texto esté centrado */
+    margin: 0; /* Elimina cualquier margen adicional */
 }
 
-button:hover {
-    background: #0056b3;
+
+.features-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-/* Imagen */
-img {
-    max-width: 100%;
-    height: auto;
+/* Tarjetas */
+.feature-card {
+    position: relative;
+    width: 300px;
+    height: 220px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    width: 160px;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(0);
+}
+
+/* Contenido de las tarjetas */
+.feature-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-card:hover .feature-content {
+    transform: rotateX(0deg);
+}
+
+.feature-title {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+}
+
+.feature-description {
+    font-size: 0.9rem;
+    color: #777;
+    text-align: center;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+/* Resumen final */
+.features-summary {
+    margin-top: 40px;
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Footer */
-footer {
-    background: #333;
-    color: #fff;
-    padding: 10px;
-    font-size: 0.9rem;
+/* Redes Sociales - Contenedor General */
+.footer-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra los íconos horizontalmente */
+    gap: 15px; /* Espaciado entre íconos */
+    margin-top: 15px; /* Separación del texto */
+}
+
+/* Estilo para cada contenedor de ícono */
+.footer-icons .icon-container {
+    width: 50px; /* Tamaño del ícono */
+    height: 50px;
+    background-color: #2c2c2c; /* Fondo oscuro por defecto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Íconos redondos */
+    overflow: hidden;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Hover para cada red social */
+.icon-instagram:hover {
+    background-color: #d62976; /* Color de Instagram */
+}
+
+.icon-twitter:hover {
+    background-color: #00acee; /* Color de Twitter */
+}
+
+.icon-linkedin:hover {
+    background-color: #0072b1; /* Color de LinkedIn */
+}
+
+.icon-whatsapp:hover {
+    background-color: #128c7e; /* Color de WhatsApp */
+}
+
+/* Animación al hacer clic */
+.icon-container:active {
+    transform: scale(0.9); /* Reduce ligeramente el tamaño */
+    transition: transform 0.1s ease;
+}
+
+/* Estilo para los íconos SVG */
+.icon-svg {
+    width: 24px; /* Tamaño del SVG */
+    height: 24px;
+    fill: #fff; /* Color blanco por defecto */
+    transition: transform 0.3s ease; /* Transición al hover */
+}
+
+/* Animación al hacer hover en el contenedor */
+.icon-container:hover .icon-svg {
+    animation: slide-in-top 0.3s both; /* Efecto de deslizar desde arriba */
+}
+
+/* Keyframes para la animación */
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(-50px); /* Comienza desde arriba */
+        opacity: 0; /* Transparente al inicio */
+    }
+    100% {
+        transform: translateY(0); /* Vuelve a su posición original */
+        opacity: 1; /* Totalmente visible */
+    }
+}
+
+/* Estilo del botón dinámico */
+.custom-button {
     position: relative;
-    bottom: 0;
-    width: 100%;
+    width: 188px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #17795E;
+    background-color: #209978;
+    overflow: hidden;
+    margin: 20px auto;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.custom-button .custom-button__text {
+    transform: translateX(22px);
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.custom-button .custom-button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 50px;
+    left: 27px;
+    background-color: #17795E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.custom-button .custom-svg {
+    width: 20px;
+    fill: #fff;
+}
+
+.custom-button:hover {
+    background: #17795E;
+}
+
+.custom-button:hover .custom-button__text {
+    color: transparent;
+}
+
+.custom-button:hover .custom-button__icon {
+    width: 148px;
+    transform: translateX(0);
+}
+
+.custom-button:active .custom-button__icon {
+    background-color: #146c54;
+}
+
+.custom-button:active {
+    border: 1px solid #146c54;
+}
+
+/* Estilo del QR dinámico */
+.custom-card {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 14px;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+.custom-bg {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 190px;
+    height: 240px;
+    z-index: 2;
+    background: rgba(255, 255, 255, .95);
+    backdrop-filter: blur(24px);
+    border-radius: 10px;
+    overflow: hidden;
+    outline: 2px solid white;
+}
+
+.custom-blob {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #003366; /* Código hexadecimal ajustado para azul */
+    opacity: 1;
+    filter: blur(12px);
+    animation: custom-blob-bounce 5s infinite ease;
+}
+
+
+.custom-qr {
+    position: relative;
+    z-index: 3;
+    max-width: 180px;
+}
+
+.custom-qr-text {
+    font-size: 0.9rem;
+    color: #333;
     text-align: center;
 }
+
+@keyframes custom-blob-bounce {
+    0% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+    }
+
+    50% {
+        transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+    }
+
+    75% {
+        transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+    }
+
+    100% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+}
+
+/* Contenedor del logo */
+.logo {
+    max-width: 110px; /* Tamaño fijo del contenedor */
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Esconde el contenido que excede el contenedor */
+    position: relative; /* Permite posicionar la imagen internamente */
+}
+
